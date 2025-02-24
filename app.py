@@ -2,7 +2,6 @@ import streamlit as st
 from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 # Title
 title = st.title(":rainbow[Research Genie]:telescope:")
@@ -54,9 +53,9 @@ def main():
         with st.status(label="Thinking...", state="running",expanded=True) as status:
             response = chain.stream({"input": input_prompt})
             status.update(label="Completed", state="complete")
-            with st.chat_message(name='Assistant', avatar=":material/robot_2:"):
-                full_response = st.write_stream(response)
-                st.session_state.messages.append({'role': 'assistant', 'avatar': ':material/robot_2:', 'content': full_response})
+        with st.chat_message(name='Assistant', avatar=":material/robot_2:"):
+            full_response = st.write_stream(response)
+            st.session_state.messages.append({'role': 'assistant', 'avatar': ':material/robot_2:', 'content': full_response})
 
     
 if __name__ == '__main__':
