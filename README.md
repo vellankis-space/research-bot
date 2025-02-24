@@ -1,4 +1,3 @@
-```markdown
 # Research Bot
 
 An AI powered application integrated with OpenAI GPT-4 model, helping you research any topic efficiently.
@@ -60,11 +59,6 @@ We welcome contributions from the community! If you would like to contribute to 
    ```
 5. Open a pull request to the main branch.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Contact
 
-For any questions or inquiries, please contact me at [vellankisuryatejareddy@gmail.com](mailto:vellankisuryatejareddy@gmail.com).
-```
+For any questions or inquiries, please contact me at [vellankisuryatejareddy@gmail.com]
