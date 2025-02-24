@@ -34,6 +34,10 @@ parser = StrOutputParser()
 # Chaining all
 chain = prompt|model|parser
 
+#disabling caching of application
+st.cache_data.clear()
+st.cache_resource.clear()
+
 # User input and response
 def main():
     # Initializing chat history
