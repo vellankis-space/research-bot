@@ -2,6 +2,9 @@ import streamlit as st
 from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
+import logging
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 # Title
 title = st.title(":rainbow[Research Genie]:telescope:")
@@ -34,12 +37,14 @@ parser = StrOutputParser()
 # Chaining all
 chain = prompt|model|parser
 
-#disabling caching of application
-st.cache_data.clear()
-st.cache_resource.clear()
-
 # User input and response
 def main():
+    try:
+    # Your LangSmith tracking code here
+        logger.debug("LangSmith tracking initiated")
+    except Exception as e:
+        logger.error(f"LangSmith tracking failed: {e}")
+        
     # Initializing chat history
     if "messages" not in st.session_state:
         st.session_state.messages = []
